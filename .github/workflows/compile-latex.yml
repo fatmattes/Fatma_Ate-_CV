@@ -29,14 +29,14 @@ jobs:
       - name: Prepare deployment folder
         run: |
           mkdir -p _site
-          cp main.pdf _site/Fatma_Ateş_CV.pdf
+          cp main.pdf _site/Fatma_Ates_CV.pdf
           echo '<html>
           <head>
-            <meta http-equiv="refresh" content="0; url=Fatma_Ateş_CV.pdf">
-            <title>Fatma Ateş CV</title>
+            <meta http-equiv="refresh" content="0; url=Fatma_Ates_CV.pdf">
+            <title>Fatma Ates CV</title>
           </head>
           <body>
-            <p>CV yükleniyor... <a href="Fatma_Ateş_CV.pdf">tıklayın</a></p>
+            <p>CV yükleniyor... <a href="Fatma_Ates_CV.pdf">tıklayın</a></p>
           </body>
           </html>' > _site/index.html
       
