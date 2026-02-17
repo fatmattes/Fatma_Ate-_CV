@@ -1,0 +1,279 @@
+%-------------------------
+% Resume in Latex
+% Author : Fatma Ateş
+% Based off of: https://github.com/fatmattes
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% only for pdflatex
+% \input{glyphtounicode}
+
+% fontawesome
+\usepackage{fontawesome5}
+
+% fixed width
+\usepackage[scale=0.90,lf]{FiraMono}
+
+% light-grey
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+% custom underilne
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+
+% custom font: helvetica-style
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault} 
+%% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting - serif
+% \titleformat{\section}{
+%   \vspace{2pt} \scshape \raggedright\large % header section
+% }{}{0em}{}[\color{black} \titlerule \vspace{-5pt}]
+
+% TODO EBSERIES
+% sans serif sections
+\titleformat {\section}{
+    \bfseries \vspace{2pt} \raggedright \large % header section
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-4pt}]
+
+% only for pdflatex
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
+      \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% CHANGED default leftmargin  0.15 in
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+\color{text-grey}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge Fatma Ateş} \\ \vspace{5pt}
+    \small \faPhone* \texttt{+905339262202} \hspace{1pt} $|$
+    \hspace{1pt} \faEnvelope \hspace{2pt} \texttt{fatmafatt01@gmail.com} \hspace{1pt} $|$ 
+    \hspace{1pt} \faLinkedin \hspace{2pt} \texttt{https://www.linkedin.com/in/fatmattess/} \hspace{1pt} $|$
+    \hspace{1pt} \faGithub \hspace{2pt} \texttt{github.com/fatmattes} \hspace{1pt} $|$
+    \hspace{1pt} \faMapMarker* \hspace{2pt}\texttt{Adana, Turkey}
+    \\ \vspace{-3pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Lefke Avrupa University}{Sep. 2022 -- Present}
+      {Bachelor of Science in Software Engineering (Student)}{Lefke, TRNC}
+      \resumeItemListStart
+        \resumeItem {\textbf{Relevant Coursework}: Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Web Development, Operating Systems, C/C++ Programming}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{TECHNICAL SKILLS}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}: C, C++, Java, JavaScript, HTML5, CSS3, C\#, SQL \vspace{2pt} \\
+     \textbf{Database}: MySQL, Database Design, CRUD Operations, MySQL Connector \vspace{2pt} \\
+     \textbf{Web Technologies}: HTML5, CSS3, JavaScript, Responsive Design \vspace{2pt} \\
+     \textbf{Operating Systems}: Linux (Intermediate), Windows, Virtual Machines \vspace{2pt} \\
+     \textbf{Tools \& Platforms}: Git, GitHub, Android Studio, VS Code, Figma, MySQL Workbench, VirtualBox/VMware \vspace{2pt} \\
+     \textbf{Libraries}: SDL (Simple DirectMedia Layer) \vspace{2pt} \\
+     \textbf{Soft Skills}: Problem Solving, Team Collaboration, Time Management, Quick Learner
+    }}
+ \end{itemize}
+
+
+%-----------LANGUAGES-----------
+\section{LANGUAGES}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+     \textbf{Turkish}: Native \hspace{10pt}
+     \textbf{English}: C1 (Advanced) \hspace{10pt}
+     \textbf{German}: A2 (Elementary)
+    }}
+ \end{itemize}
+
+
+%-----------COURSES & TRAINING-----------
+\section{COURSES \& TRAINING}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Udemy Web Development Course}} {}
+      \resumeItemListStart
+        \resumeItem{Completed comprehensive training in \textbf{HTML5, CSS3, and JavaScript}}
+        \resumeItem{Built multiple projects including a fully functional hotel website}
+      \resumeItemListEnd
+      
+    \resumeProjectHeading
+      {\textbf{2D Game Engine Training}} {}
+      \resumeItemListStart
+        \resumeItem{Specialized training in \textbf{game development} and \textbf{C++} programming}
+        \resumeItem{Built custom game engine with physics and game mechanics using \textbf{SDL library}}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------INTERESTS-----------
+\section{INTERESTS}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+     Game Development, Mobile App Development, Web Design, Database Management, Linux Systems
+    }}
+ \end{itemize}
+
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+    \resumeSubHeadingListStart
+    
+      \resumeProjectHeading
+          {\textbf{Fish Finder Mobile Application}} {}
+          \resumeItemListStart
+            \resumeItem{Developed a fish finding mobile application using \textbf{HTML, CSS, and Java} with GPS integration and sonar data simulation}
+            \resumeItem{Implemented real-time underwater terrain mapping algorithms to \textbf{display fish locations and water depth}}
+            \resumeItem{Designed intuitive user interface and conducted \textbf{user testing with 10+ fishermen}, incorporating feedback for improvements}
+            \resumeItem{Utilized \textbf{Android Studio} for development and \textbf{GitHub} for version control}
+          \resumeItemListEnd
+ 
+    \resumeProjectHeading
+    {\textbf{2D Game Engine Development}} {}
+    \begin{samepage}  % <--- START
+    \resumeItemListStart
+        \resumeItem{Completed specialized training in \textbf{game development} and built a custom \textbf{2D game engine} using \textbf{C++} and \textbf{SDL library}}
+        \resumeItem{Implemented physics engine with \textbf{collision detection}, sprite rendering, and basic game mechanics using SDL}
+        \resumeItem{Designed \textbf{modular architecture} allowing easy integration of new game objects and character behaviors}
+        \resumeItem{Applied \textbf{object-oriented programming principles} to create reusable and maintainable code for game development}
+    \resumeItemListEnd
+    \end{samepage}  % <--- END
+          
+      \resumeProjectHeading
+          {\textbf{Hotel Website (HTML/CSS/JavaScript)}} {}
+          \resumeItemListStart
+            \resumeItem{Completed comprehensive \textbf{web development course on Udemy} covering HTML, CSS, and JavaScript fundamentals}
+            \resumeItem{Designed and developed a \textbf{fully responsive hotel website} with modern UI/UX principles}
+            \resumeItem{Implemented interactive features including \textbf{room booking forms}, image galleries, and customer reviews section}
+            \resumeItem{Achieved \textbf{95+ Google PageSpeed score} and optimized for mobile responsiveness across all devices}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Academic Game Development Team}} {}
+          \resumeItemListStart
+            \resumeItem{Served as a \textbf{group project member} under the supervision of \textbf{Asst. Prof. Dr. Cem Burak Kalyoncu}}
+            \resumeItem{Developed \textbf{game mechanics} using \textbf{C++} by applying \textbf{Object-Oriented Programming (OOP) principles}}
+            \resumeItem{Collaborated with team members on \textbf{game machine coding} and contributed to various development tasks}
+            \resumeItem{Gained hands-on experience in \textbf{teamwork, code integration, and game development workflows}}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{C\# \& MySQL Database Application}} {}
+          \resumeItemListStart
+            \resumeItem{Developed a \textbf{desktop application} using \textbf{C#} that connects to a \textbf{MySQL database} for data management}
+            \resumeItem{Designed and implemented a \textbf{graphical user interface (GUI)} to allow users to interact with the database seamlessly}
+            \resumeItem{Performed \textbf{CRUD operations} (Create, Read, Update, Delete) to manage and manipulate data efficiently}
+            \resumeItem{Utilized \textbf{MySQL Connector} to establish a stable connection between the application and the database}
+            \resumeItem{Gained practical experience in \textbf{database integration} and \textbf{UI/UX design} for desktop applications}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Linux Virtual Machine Setup}} {}
+          \resumeItemListStart
+            \resumeItem{Set up and configured a \textbf{Linux virtual machine} using \textbf{VirtualBox/VMware} for development and testing purposes}
+            \resumeItem{Gained \textbf{intermediate-level experience} with Linux operating system, including command-line navigation and system configuration}
+            \resumeItem{Installed and managed software packages, configured network settings, and practiced \textbf{system administration} tasks}
+            \resumeItem{Used the virtual environment to test cross-platform applications and \textbf{enhance Linux proficiency}}
+          \resumeItemListEnd
+          
+    \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
