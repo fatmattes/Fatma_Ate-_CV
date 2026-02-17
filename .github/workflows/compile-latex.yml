@@ -1,0 +1,53 @@
+name: Compile and Deploy LaTeX CV
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - '**.tex'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            main.tex
+          latexmk_use_lualatex: true
+          work_in_root_file_dir: true
+      
+      - name: Create output directory
+        run: |
+          mkdir -p _site
+          cp main.pdf _site/
+          echo '<!DOCTYPE html>
+          <html>
+          <head>
+            <meta http-equiv="refresh" content="0; url=main.pdf" />
+            <title>Fatma Ateş CV</title>
+          </head>
+          <body>
+            <p>CV yükleniyor... <a href="main.pdf">tıklayın</a></p>
+          </body>
+          </html>' > _site/index.html
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
