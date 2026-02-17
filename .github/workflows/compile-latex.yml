@@ -1,10 +1,8 @@
-name: Compile and Deploy LaTeX CV
+name: Compile and Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
-    paths:
-      - '**.tex'
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -13,33 +11,32 @@ permissions:
   id-token: write
 
 jobs:
-  build_latex:
+  build:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Compile LaTeX document
+      - name: Compile LaTeX
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: |
-            main.tex
-          latexmk_use_lualatex: true
-          work_in_root_file_dir: true
+          root_file: main.tex
+          latexmk_use_xelatex: true
       
-      - name: Create output directory
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Prepare deployment folder
         run: |
           mkdir -p _site
-          cp main.pdf _site/
-          echo '<!DOCTYPE html>
-          <html>
+          cp main.pdf _site/Fatma_Ateş_CV.pdf
+          echo '<html>
           <head>
-            <meta http-equiv="refresh" content="0; url=main.pdf" />
+            <meta http-equiv="refresh" content="0; url=Fatma_Ateş_CV.pdf">
             <title>Fatma Ateş CV</title>
           </head>
           <body>
-            <p>CV yükleniyor... <a href="main.pdf">tıklayın</a></p>
+            <p>CV yükleniyor... <a href="Fatma_Ateş_CV.pdf">tıklayın</a></p>
           </body>
           </html>' > _site/index.html
       
@@ -49,5 +46,4 @@ jobs:
           path: _site
       
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
