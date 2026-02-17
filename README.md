@@ -22,7 +22,7 @@ Her `main` branch'ine yapılan push işleminde:
 ## 📥 PDF'yi İndir
 
 PDF'i bilgisayarına indirmek için yukarıdaki linke tıkla ve sağ üstteki indir butonunu kullan.
-https://fatmattes.github.io/Fatma_Ateş_CV/Fatma_Ateş_CV.pdf
+https://fatmattes.github.io/Fatma_Ateş_CV/Fatma_Ates_CV.pdf
 
 ---
 
